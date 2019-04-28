@@ -7,7 +7,7 @@ void createListParent(List_parent &L)
     lastParent(L) = NULL;
 }
 
-address_parent allocationParent(string idParent, string namaParent)
+address_parent allocationParent(int idParent, string namaParent)
 {
      address_parent P = new elmlist_parent;
      idParent(P) = idParent;
@@ -99,7 +99,7 @@ void deleteAfterParent(List_parent &L, address_parent Prec, address_parent &P)
     prevParent(P) = NULL;
     nextParent(P) = NULL;
 }
-address_parent SearchIdParent(List_parent L, string idPrnt)
+address_parent SearchIdParent(List_parent L, int idPrnt)
 {
     address_parent P = firstParent(L);
     while(P != NULL && idParent(P) != idPrnt)

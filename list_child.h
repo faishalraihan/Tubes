@@ -17,7 +17,7 @@ typedef struct elmlist_child *address_child;
 
 struct elmlist_child{
     string namaChild;
-    string idChild;
+    int idChild;
     address_child nextChild;
     address_child prevChild;
 };
@@ -34,9 +34,9 @@ void insertAfterChild(address_child Prec, address_child P);
 void deleteFirstChild(List_child &L, address_child &P);
 void deleteLastChild(List_child &L, address_child &P);
 void deleteAfterChild(List_child &L, address_child Prec, address_child &P);
-address_child allocationChild(string idChild, string namaChild);
+address_child allocationChild(int idChild, string namaChild);
 void deallocateChild(address_child &P);
-address_child SearchIdChild(List_child L, string idChild);
+address_child SearchIdChild(List_child L, int idChild);
 
 
 

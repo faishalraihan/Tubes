@@ -9,7 +9,7 @@
 #include <stdlib.h>
 using namespace std;
 
-#define nextRelation(R) R->next
+#define nextRelation(R) R->nextRelation
 #define firstRelation(L) L.firstRelation
 #define child(R) R->child
 #define parent(R) R->parent
@@ -17,9 +17,9 @@ using namespace std;
 typedef struct elmlist_relasi *address_relasi;
 
 struct elmlist_relasi{
+    address_relasi nextRelation;
     address_child child;
     address_parent parent;
-    address_relasi nextRelation;
 };
 
 struct List_relasi
@@ -28,11 +28,10 @@ struct List_relasi
 };
 
 void createListrelasi(List_relasi &L);
-void insertFirst(List_relasi &L, address_relasi P);
-void insertLast(List_relasi &L, address_relasi P);
-void insertAfter(address_relasi Prec, address_relasi P);
-void deleteFirst(List_relasi &L, address_relasi &P);
-void deleteLast(List_relasi &L, address_relasi &P);
-void deleteAfter(address_relasi Prec, address_relasi &P);
+void insertRelation(List_relasi &L, address_relasi R);
+void deleteFirstRelation(List_relasi &L, address_relasi &R);
+void deleteLastRelation(List_relasi &L, address_relasi &R);
+void deleteAfterRelation(address_relasi Prec, address_relasi &R);
+address_relasi allocationRelation(address_parent P , address_child C);
 
 #endif // LIST_RELASI_H_INCLUDED

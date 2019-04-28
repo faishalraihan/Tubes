@@ -5,7 +5,7 @@ void createListChild(List_child &L) {
     lastChild(L) = NULL;
 }
 
-address_child allocationChild(string idChild,string namaChild)
+address_child allocationChild(int idChild,string namaChild)
 {
     address_child P = new elmlist_child;
     idChild(P) = idChild;
@@ -96,7 +96,7 @@ void deleteAfterChild(List_child &L, address_child Prec, address_child &P)
     nextChild(P) = NULL;
 }
 
-address_child SearchIdChild(List_child L, string idChld)
+address_child SearchIdChild(List_child L, int idChld)
 {
     address_child P = firstChild(L);
     while(P != NULL && idChild(P) != idChld)

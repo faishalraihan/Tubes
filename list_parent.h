@@ -17,7 +17,7 @@ using namespace std;
 typedef struct elmlist_parent *address_parent;
 
 struct elmlist_parent {
-    string idParent;
+    int idParent;
     string namaParent;
     address_parent nextParent;
     address_parent prevParent;
@@ -35,8 +35,8 @@ void insertLastParent(List_parent &L, address_parent P);
 void deleteFirstParent(List_parent &L, address_parent &P);
 void deleteLastParent(List_parent &L, address_parent &P);
 void deleteAfterParent(List_parent &L, address_parent Prec, address_parent &P);
-address_parent SearchIdParent(List_parent L,string idParent);
-address_parent allocationParent(string idParent, string namaParent);
+address_parent SearchIdParent(List_parent L,int idParent);
+address_parent allocationParent(int idParent, string namaParent);
 void deallocateParent(address_parent &P);
 
 
