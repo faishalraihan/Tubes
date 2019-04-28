@@ -43,10 +43,10 @@ void printParent(List_parent L)
             cout<<namaParent(P)<<" - ";
             P = nextParent(P);
         }
-        cout<<"Done "<<endl;
+
     }else
     {
-        cout<<"Nope "<<endl;
+       cout<<"Tidak ada data "<<endl;
     }
 }
 void cobacoba(List_parent L)
