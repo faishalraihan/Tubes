@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1556483435 source:d:\std\tubes_data_mahasiswa\list_parent.cpp
+	"list_parent.h"
+
+1556483435 d:\std\tubes_data_mahasiswa\list_parent.h
+	<iostream>
+	<stdlib.h>
+	"list_relasi.h"
+
+1556484348 source:d:\std\tubes_data_mahasiswa\list_relasi.cpp
+	"list_relasi.h"
+
+1556483435 d:\std\tubes_data_mahasiswa\list_relasi.h
+	<iostream>
+	<stdlib.h>
+	"list_child.h"
+
+1556469365 d:\std\tubes_data_mahasiswa\list_child.h
+	<iostream>
+	<stdlib.h>
+
+1556484113 source:d:\std\tubes_data_mahasiswa\main.cpp
+	<iostream>
+	"Mahasiswa.h"
+	"list_parent.h"
+	"list_child.h"
+	"list_relasi.h"
+
+1556470030 source:d:\std\tubes_data_mahasiswa\list_child.cpp
+	"list_child.h"
+
+1556484348 source:d:\std\tubes_data_mahasiswa\mahasiswa.cpp
+	"Mahasiswa.h"
+
+1556483826 d:\std\tubes_data_mahasiswa\mahasiswa.h
+	<iostream>
+	"list_parent.h"
+	"list_child.h"
+	"list_relasi.h"
+
