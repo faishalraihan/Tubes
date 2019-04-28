@@ -14,9 +14,14 @@ address_relasi allocationRelation(address_child C)
 
 void insertRelation(List_relasi &L, address_relasi R)
 {
-
+        if(firstRelation(L) != NULL)
+        {
         nextRelation(R) = firstRelation(L);
         firstRelation(L) = R;
+        }else
+        {
+            firstRelation(L) = R;
+        }
 }
 
 void deleteFirstRelation(List_relasi &L, address_relasi &R)
