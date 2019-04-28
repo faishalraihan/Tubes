@@ -49,3 +49,7 @@ void printParent(List_parent L)
         cout<<"Nope "<<endl;
     }
 }
+void cobacoba(List_parent L)
+{
+    cout<<"mem";
+}
