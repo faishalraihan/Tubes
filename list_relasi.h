@@ -30,7 +30,8 @@ void createListrelasi(List_relasi &L);
 void insertRelation(List_relasi &L, address_relasi R);
 void deleteFirstRelation(List_relasi &L, address_relasi &R);
 void deleteLastRelation(List_relasi &L, address_relasi &R);
-void deleteAfterRelation(address_relasi Prec, address_relasi &R);
+void deleteAfterRelation(List_relasi &L,address_relasi Prec, address_relasi &R);
 address_relasi allocationRelation(address_child C);
+void deallocateRelation(address_relasi R);
 
 #endif // LIST_RELASI_H_INCLUDED

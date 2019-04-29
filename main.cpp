@@ -7,35 +7,36 @@
 using namespace std;
 
 List_parent Mhs;
-List_child Dsn;
+List_child Mtkl;
 List_relasi Rls;
 address_parent P;
 address_child C;
 address_relasi R;
-int IDMhs;
-int IDDsn;
+
 
 int main()
 {
     createListParent(Mhs);
-    createListChild(Dsn);
+    createListChild(Mtkl);
 //    createListrelasi(Rls);
 
     insertParent(Mhs);
-//    insertParent(Mhs);
+    insertParent(Mhs);
 
-    insertChild(Dsn);
-//    insertChild(Dsn);
+    insertChild(Mtkl);
+    insertChild(Mtkl);;
 
     printParent(Mhs);
     cout<<endl;
-    printChild(Dsn);
+    printChild(Mtkl);
     cout<<endl;
 
 
 
-    connect(Mhs,Dsn,1,3);
+    connect(Mhs,Mtkl,1,3);
+    connect(Mhs,Mtkl,1,4);
 //    connect(Mhs,Dsn,2,4);
-    cout<<checkConnection(Mhs,Dsn,1,3)<<endl;
+    cout<<checkConnection(Mhs,Mtkl,1,3)<<endl;
+    cout<<checkConnection(Mhs,Mtkl,1,4)<<endl;
 
 }

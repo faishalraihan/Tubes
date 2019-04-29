@@ -11,6 +11,10 @@ address_relasi allocationRelation(address_child C)
     nextRelation(R) = NULL;
     return R;
 }
+void deallocateRelation(address_relasi R)
+{
+    delete R;
+}
 
 void insertRelation(List_relasi &L, address_relasi R)
 {
@@ -31,7 +35,7 @@ void deleteFirstRelation(List_relasi &L, address_relasi &R)
     nextRelation(R) = NULL;
 }
 
-void deleteAfterRelation(address_relasi Prec, address_relasi &R)
+void deleteAfterRelation(List_relasi &L,address_relasi Prec, address_relasi &R)
 {
     if (Prec!=NULL && nextRelation(Prec)!=NULL)
     {
