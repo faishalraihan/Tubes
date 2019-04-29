@@ -125,7 +125,28 @@ void printAll(List_parent P,List_child C)
 
 void printChildOfParent(List_parent P, List_child C, int idPrnt)
 {
-
+    address_parent Prnt = SearchIdParent(P,idPrnt);
+    if (Prnt !=NULL )
+    {
+        cout<< "Mahasiswa dengan nama "<< namaParent(Prnt)<< "mengambil mata kuliah : " <<endl;
+        address_relasi R = firstRelation(childlist(Prnt));
+        if (R!=NULL)
+        {
+            while (R!=NULL)
+            {
+            cout<< namaChild(child(R)) << ", ";
+            R=nextRelation(R);
+            }
+        }
+        else
+        {
+            cout<< " Mahasiswa belum mengambil mata kuliah";
+        }
+    }
+    else
+    {
+            cout<< " Mahasiswa tidak ditemukan ";
+    }
 }
 //-----------------------------------------------------//
 
@@ -184,6 +205,92 @@ void disconnect(List_parent &P, List_child C, int idPrnt,int idChld)
             deleteAfterRelation(childlist(Prnt),Q,R);
             deallocateRelation(R);
         }
+    }
+}
+
+void deleteParent(List_parent &P)
+{
+    int id;
+    cout << "Masukkan ID mahasiswa yang ingin dihapus : ";
+    cin>> id;
+    address_parent Prnt = SearchIdParent(P, id);
+    if (Prnt!=NULL)
+    {
+        address_relasi tmp, relasi = firstRelation(childlist(Prnt));
+        while (relasi!=NULL)
+        {
+            tmp= relasi;
+            relasi= nextRelation(relasi);
+            deleteFirstRelation(childlist(Prnt),tmp);
+            deallocateRelation(tmp);
+        }
+        if (Prnt == firstParent(P))
+        {
+            deleteFirstParent(P,Prnt);
+        }
+        else if (Prnt == lastParent(P))
+        {
+            deleteLastParent(P,Prnt);
+        }
+        else
+        {
+            address_parent prec = prevParent(Prnt);
+            deleteAfterParent(P, prec, Prnt);
+        }
+        deallocateParent(Prnt);
+        cout << "Mahasiswa berhasil dihapus "<<endl;
+    }else
+    {
+        cout << "ID mahasiswa tidak ditemukan "<<endl;
+    }
+}
+
+void deleteChild(List_parent &P, List_child &C)
+{
+    int id;
+    cout << "Masukkan ID mahasiswa yang ingin dihapus : ";
+    cin>> id;
+    address_child prec, Chld = SearchIdChild(C, id);
+    if (Chld!=NULL)
+    {
+        address_parent Prnt = firstParent(P);
+        while (Prnt!=NULL)
+        {
+            address_relasi tmp, relasi = firstRelation(childlist(Prnt));
+            while (relasi !=NULL){
+                if(child(relasi)==Chld)
+                {
+                    relasi = nextRelation(relasi);
+                    deleteFirstRelation(childlist(Prnt),tmp);
+                    deallocateRelation(tmp);
+                }else if (nextRelation(relasi)!=NULL && child(nextRelation(relasi))==Chld)
+                {
+                    deleteAfterRelation(childlist(Prnt),relasi,tmp);
+                    deallocateRelation(tmp);
+                } else {
+                    relasi=nextRelation(relasi);
+                }
+                Prnt = nextParent(Prnt);
+            }
+        }
+            if (Chld == firstChild(C))
+            {
+                deleteFirstChild(C,Chld);
+            }
+            else if (Chld == lastChild(C))
+            {
+                deleteLastChild(C,Chld);
+            }
+            else
+            {
+                prec = prevChild(Chld);
+                deleteAfterChild(C, prec, Chld);
+            }
+        deallocateChild(Chld);
+        cout << "Matakuliah berhasil dihapus "<<endl;
+    }else
+    {
+            cout << "Matakuliah tidak ditemukan";
     }
 }
 
