@@ -3,6 +3,9 @@
 //**Insert Procedure
 void insertParent(List_parent &L)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     int ID;
     string namaMhs;
     cout<<"ID Mahasiswa: ";
@@ -35,6 +38,9 @@ void insertParent(List_parent &L)
 }
 void insertChild(List_child &L)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     int ID;
     string namaDsn;
     cout<<"ID Mata Kuliah: ";
@@ -71,6 +77,9 @@ void insertChild(List_child &L)
 
 void printParent(List_parent L)
 {
+   /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) != NULL)
     {
         address_parent P = firstParent(L);
@@ -87,6 +96,9 @@ void printParent(List_parent L)
 
 void printChild(List_child L)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstChild(L) != NULL)
     {
         address_child C = firstChild(L);
@@ -102,6 +114,9 @@ void printChild(List_child L)
 }
 void printAll(List_parent P,List_child C)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     address_parent Q = firstParent(P);
     address_relasi R;
     while(Q != NULL)
@@ -116,7 +131,7 @@ void printAll(List_parent P,List_child C)
                 R = nextRelation(R);
             }
         }else{
-            cout<<"Tidak ada Data";
+            cout<<"Belum mengambil menu";
         }
         Q = nextParent(Q);
     }
@@ -125,10 +140,13 @@ void printAll(List_parent P,List_child C)
 
 void printChildOfParent(List_parent P, List_child C, int idPrnt)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     address_parent Prnt = SearchIdParent(P,idPrnt);
     if (Prnt !=NULL )
     {
-        cout<< "Mahasiswa dengan nama "<< namaParent(Prnt)<< "mengambil mata kuliah : " <<endl;
+        cout<< "Mahasiswa dengan nama "<< namaParent(Prnt)<< " mengambil mata kuliah : ";
         address_relasi R = firstRelation(childlist(Prnt));
         if (R!=NULL)
         {
@@ -153,6 +171,9 @@ void printChildOfParent(List_parent P, List_child C, int idPrnt)
 //**Connection Procedure/Function
 void connect(List_parent &P, List_child C, int idPrnt, int idChld)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     address_parent Prnt = SearchIdParent(P,idPrnt);
     address_child Chld = SearchIdChild(C,idChld);
     if(Prnt != NULL && Chld != NULL)
@@ -167,6 +188,9 @@ void connect(List_parent &P, List_child C, int idPrnt, int idChld)
 
 bool checkConnection(List_parent P, List_child C,int idPrnt, int idChld)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     address_parent Prnt = SearchIdParent(P,idPrnt);
     address_child Chld = SearchIdChild(C,idChld);
     if(Prnt != NULL && Chld != NULL)
@@ -186,6 +210,9 @@ bool checkConnection(List_parent P, List_child C,int idPrnt, int idChld)
 }
 void disconnect(List_parent &P, List_child C, int idPrnt,int idChld)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     address_parent Prnt = SearchIdParent(P,idPrnt);
     address_child Chld = SearchIdChild(C,idChld);
     if(Prnt != NULL && Chld != NULL)
@@ -210,6 +237,9 @@ void disconnect(List_parent &P, List_child C, int idPrnt,int idChld)
 
 void deleteParent(List_parent &P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     int id;
     cout << "Masukkan ID mahasiswa yang ingin dihapus : ";
     cin>> id;
@@ -247,8 +277,11 @@ void deleteParent(List_parent &P)
 
 void deleteChild(List_parent &P, List_child &C)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     int id;
-    cout << "Masukkan ID mahasiswa yang ingin dihapus : ";
+    cout << "Masukkan ID matakuliah yang ingin dihapus : ";
     cin>> id;
     address_child prec, Chld = SearchIdChild(C, id);
     if (Chld!=NULL)
@@ -293,4 +326,72 @@ void deleteChild(List_parent &P, List_child &C)
             cout << "Matakuliah tidak ditemukan";
     }
 }
+
+void jumlahmatkul(List_parent P, List_child C)
+{
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
+    int jumlahmtkl=0;
+    cout<< "Masukkan Id mahasiswa yang ingin diketahui mengambil berapa matkul : ";
+    int idPrnt;
+    cin >> idPrnt;
+    address_parent Prnt = SearchIdParent(P,idPrnt);
+    if (Prnt !=NULL )
+    {
+        address_relasi R = firstRelation(childlist(Prnt));
+        if (R!=NULL)
+        {
+            while (R!=NULL)
+            {
+            jumlahmtkl=jumlahmtkl+1;
+            R=nextRelation(R);
+            }
+            cout<< "Mahasiswa dengan nama "<< namaParent(Prnt)<< " mengambil mata kuliah sebanyak : " << jumlahmtkl<<endl;
+        }
+        else
+        {
+            cout<< " Mahasiswa belum mengambil mata kuliah";
+        }
+    }
+    else
+    {
+            cout<< " Mahasiswa tidak ditemukan ";
+    }
+}
+
+void jmlmatkuldiambil(List_parent P, List_child C)
+{
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
+    int total = 0;
+    cout<<"Masukan Id Matkul: ";
+    int idChld;
+    cin>>idChld;
+    address_child Chld = SearchIdChild(C, idChld);
+    address_parent Prnt = firstParent(P);
+    if(Chld != NULL){
+        while(Prnt != NULL)
+        {
+            address_relasi R = firstRelation(childlist(Prnt));
+            while(R != NULL)
+            {
+                if(idChild(child(R)) == idChld)
+                {
+
+                    total++;
+                    R = nextRelation(R);
+                }else{
+
+                    R = nextRelation(R);
+                }
+            }
+        Prnt = nextParent(Prnt);
+        }
+    cout<<total<<endl;
+    }
+
+}
+
 

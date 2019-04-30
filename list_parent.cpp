@@ -2,13 +2,18 @@
 
 void createListParent(List_parent &L)
 {
-
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     firstParent(L) = NULL;
     lastParent(L) = NULL;
 }
 
 address_parent allocationParent(int idParent, string namaParent)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
      address_parent P = new elmlist_parent;
      idParent(P) = idParent;
      namaParent(P) = namaParent;
@@ -19,11 +24,17 @@ address_parent allocationParent(int idParent, string namaParent)
 }
 void deallocateParent(address_parent &P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     delete P;
 }
 
 void insertFirstParent(List_parent &L, address_parent P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) == NULL && lastParent(L) == NULL)
     {
         firstParent(L) = P;
@@ -38,6 +49,9 @@ void insertFirstParent(List_parent &L, address_parent P)
 
 void insertLastParent(List_parent &L, address_parent P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) == NULL && lastParent(L) == NULL)
     {
         insertFirstParent(L,P);
@@ -50,6 +64,9 @@ void insertLastParent(List_parent &L, address_parent P)
 }
 void insertAfterParent(List_parent &L, address_parent Prec, address_parent P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) != NULL)
     {
         nextParent(P) = nextParent(Prec);
@@ -60,6 +77,9 @@ void insertAfterParent(List_parent &L, address_parent Prec, address_parent P)
 }
 void deleteFirstParent(List_parent &L,address_parent &P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) != NULL && lastParent(L) != NULL)
     {
       P = firstParent(L);
@@ -76,6 +96,9 @@ void deleteFirstParent(List_parent &L,address_parent &P)
 }
 void deleteLastParent(List_parent &L, address_parent &P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     if(firstParent(L) != NULL && lastParent(L) != NULL)
     {
         P = lastParent(L);
@@ -93,6 +116,9 @@ void deleteLastParent(List_parent &L, address_parent &P)
 
 void deleteAfterParent(List_parent &L, address_parent Prec, address_parent &P)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     P = nextParent(Prec);
     nextParent(Prec) = nextParent(P);
     prevParent(nextParent(P)) = Prec;
@@ -101,6 +127,9 @@ void deleteAfterParent(List_parent &L, address_parent Prec, address_parent &P)
 }
 address_parent SearchIdParent(List_parent L, int idPrnt)
 {
+    /** NAMA: FAISHAL RAIHAN
+        NIM : 1301184163
+    */
     address_parent P = firstParent(L);
     while(P != NULL && idParent(P) != idPrnt)
     {

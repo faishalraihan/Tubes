@@ -19,6 +19,8 @@ void printAll (List_parent P, List_child C);
 void printChildOfParent (List_parent P, List_child C, int idPrnt);
 void deleteChild (List_parent &P, List_child &C);
 void deleteParent (List_parent &P);
+void jumlahmatkul(List_parent P, List_child C);
+void jmlmatkuldiambil(List_parent P, List_child C);
 
 
 #endif // MAHASISWA_H_INCLUDED

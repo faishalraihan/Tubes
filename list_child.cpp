@@ -1,12 +1,18 @@
 #include "list_child.h"
 
 void createListChild(List_child &L) {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     firstChild(L) = NULL;
     lastChild(L) = NULL;
 }
 
 address_child allocationChild(int idChild,string namaChild)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     address_child P = new elmlist_child;
     idChild(P) = idChild;
     namaChild(P) = namaChild;
@@ -16,11 +22,17 @@ address_child allocationChild(int idChild,string namaChild)
 }
 void deallocateChild(address_child &P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     delete P;
 }
 
 void insertFirstChild(List_child &L, address_child P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
      if(firstChild(L) == NULL && lastChild(L) == NULL)
     {
         firstChild(L) = P;
@@ -34,6 +46,9 @@ void insertFirstChild(List_child &L, address_child P)
 }
 void insertLastChild(List_child &L, address_child P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     if(firstChild(L) == NULL && lastChild(L) == NULL)
     {
         insertFirstChild(L,P);
@@ -47,6 +62,9 @@ void insertLastChild(List_child &L, address_child P)
 
 void insertAfterChild(List_child &L, address_child Prec, address_child P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     prevChild(nextChild(Prec)) = P;
     nextChild(P) = nextChild(Prec);
     prevChild(P) = Prec;
@@ -55,6 +73,9 @@ void insertAfterChild(List_child &L, address_child Prec, address_child P)
 
 void deleteFirstChild(List_child &L, address_child &P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     if(firstChild(L) != NULL && lastChild(L) != NULL)
     {
       P = firstChild(L);
@@ -72,6 +93,9 @@ void deleteFirstChild(List_child &L, address_child &P)
 
 void deleteLastChild(List_child &L, address_child &P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     if(firstChild(L) != NULL && lastChild(L) != NULL)
     {
         P = lastChild(L);
@@ -89,6 +113,9 @@ void deleteLastChild(List_child &L, address_child &P)
 
 void deleteAfterChild(List_child &L, address_child Prec, address_child &P)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     P = nextChild(Prec);
     nextChild(Prec) = nextChild(P);
     prevChild(nextChild(P)) = Prec;
@@ -98,6 +125,9 @@ void deleteAfterChild(List_child &L, address_child Prec, address_child &P)
 
 address_child SearchIdChild(List_child L, int idChld)
 {
+    /** NAMA: ADITYA RAMADHAN
+        NIM : 1301184380
+    */
     address_child P = firstChild(L);
     while(P != NULL && idChild(P) != idChld)
     {
