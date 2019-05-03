@@ -131,7 +131,7 @@ void printAll(List_parent P,List_child C)
                 R = nextRelation(R);
             }
         }else{
-            cout<<"Belum mengambil menu";
+            cout<<"Belum mengambil mata kuliah";
         }
         Q = nextParent(Q);
     }
